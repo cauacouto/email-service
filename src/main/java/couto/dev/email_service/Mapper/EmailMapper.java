@@ -8,5 +8,5 @@ import org.mapstruct.Mapper;
 public interface EmailMapper {
 
 
-    EmailEntity toEntity(ReservacriadaDto emailEntity);
+    EmailEntity toEntity(ReservacriadaDto email);
 }
