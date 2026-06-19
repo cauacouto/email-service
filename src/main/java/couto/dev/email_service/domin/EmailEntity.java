@@ -8,6 +8,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Document(collation = "emails")
@@ -26,6 +27,9 @@ public class EmailEntity {
     private String destinatario;
     private String assunto;
     private String mensagem;
+    private LocalDateTime dataCriacao;
+    private LocalDateTime dataEnvio;
+    private String erro;
     private EmailStatus emailStatus;
 
 
