@@ -1,17 +1,17 @@
 package couto.dev.email_service.domin;
 
 import couto.dev.email_service.Enum.EmailStatus;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Document(collation = "emails")
+@Entity
+@Table(name = "email-db")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -20,7 +20,8 @@ import java.util.UUID;
 public class EmailEntity {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private UUID usuarioId;
     private Integer salaId;
     private Integer reservaId;
