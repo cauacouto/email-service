@@ -15,6 +15,8 @@ public class EmailConsumer {
 
     @RabbitListener(queues = "email.queue")
     public void ReceberReserva(@Payload ReservacriadaDto event){
+        System.out.println("===== CHEGOU NA FILA =====");
         emailService.enviarEmail(event);
+        System.out.println("entrou no email service");
     }
 }
